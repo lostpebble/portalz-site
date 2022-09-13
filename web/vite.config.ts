@@ -6,7 +6,7 @@ import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfil
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
-    port: 3000
+    port: 3000,
   },
   plugins: [react()],
   resolve: {
@@ -17,16 +17,11 @@ export default defineConfig({
       util: "rollup-plugin-node-polyfills/polyfills/util",
       sys: "util",
       stream: "rollup-plugin-node-polyfills/polyfills/stream",
-      _stream_duplex:
-        "rollup-plugin-node-polyfills/polyfills/readable-stream/duplex",
-      _stream_passthrough:
-        "rollup-plugin-node-polyfills/polyfills/readable-stream/passthrough",
-      _stream_readable:
-        "rollup-plugin-node-polyfills/polyfills/readable-stream/readable",
-      _stream_writable:
-        "rollup-plugin-node-polyfills/polyfills/readable-stream/writable",
-      _stream_transform:
-        "rollup-plugin-node-polyfills/polyfills/readable-stream/transform",
+      _stream_duplex: "rollup-plugin-node-polyfills/polyfills/readable-stream/duplex",
+      _stream_passthrough: "rollup-plugin-node-polyfills/polyfills/readable-stream/passthrough",
+      _stream_readable: "rollup-plugin-node-polyfills/polyfills/readable-stream/readable",
+      _stream_writable: "rollup-plugin-node-polyfills/polyfills/readable-stream/writable",
+      _stream_transform: "rollup-plugin-node-polyfills/polyfills/readable-stream/transform",
     },
   },
   build: {
@@ -34,11 +29,13 @@ export default defineConfig({
     commonjsOptions: {
       include: [],
     },
+    target: ["es2020"],
   },
   optimizeDeps: {
     disabled: false,
     esbuildOptions: {
       // Node.js global to browser globalThis
+      target: "es2020",
       define: {
         global: "globalThis",
       },

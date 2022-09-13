@@ -1,15 +1,14 @@
 import { Store } from "pullstate";
 
 export enum EProgress {
-  P0_PICK_NETWORK,
-  P1_CONNECT_NETWORK,
-  P2_SEND_AMOUNT,
+  P0_CONNECT_NETWORK,
+  P1_SEND_AMOUNT,
 }
 
 interface IPortalFormInputs {
   progress: EProgress;
   amount: number;
-  symbol: string;
+  symbol?: string;
 }
 
 interface IAppStore {
@@ -18,8 +17,7 @@ interface IAppStore {
 
 export const AppStore = new Store<IAppStore>({
   formInputs: {
-    progress: EProgress.P0_PICK_NETWORK,
+    progress: EProgress.P0_CONNECT_NETWORK,
     amount: 0,
-    symbol: "sol",
   },
 });
