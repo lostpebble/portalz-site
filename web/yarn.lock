@@ -3776,7 +3776,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^7.3.2":
+"framer-motion@npm:^7.3.4":
   version: 7.3.4
   resolution: "framer-motion@npm:7.3.4"
   dependencies:
@@ -6461,7 +6461,7 @@ __metadata:
     eslint-plugin-n: ^15.2.5
     eslint-plugin-promise: ^6.0.1
     eslint-plugin-react: ^7.31.8
-    framer-motion: ^7.3.2
+    framer-motion: ^7.3.4
     near-api-js: 0.44.2
     prettier: ^2.7.1
     pullstate: ^1.24.0
